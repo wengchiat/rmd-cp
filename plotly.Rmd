@@ -1,0 +1,30 @@
+---
+title: "Cars"
+author: "W.C. NG"
+date: "25 June 2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Car and Performance
+
+In this presentation, we will use the mtcars dataset to illustrates various car features and the mileage per gallon (MPG) performance
+
+```{r, include = FALSE}
+suppressPackageStartupMessages(library(plotly))
+data("mtcars")
+```
+
+## Number of Cylinder and MPG
+All the cars have either 4, 6 or 8 cylinders. From the boxplot below, it is obvious that cars with lower cylinder number perform better in  MPG
+
+```{r}
+plot_ly(data = mtcars, y = ~ mpg, x = ~ cyl, type = 'box',
+              color = ~as.factor(cyl))
+```
+
+
+## Thank you.
